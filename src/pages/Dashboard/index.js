@@ -28,7 +28,7 @@ export default function Dashboard({ history }) {
 
     const socket = useMemo(
         () =>
-            socketio('http://localhost:8000/', { query: { user: user_id } }),
+            socketio('https://mern-stack-event-project.herokuapp.com/', { query: { user: user_id } }),
         [user_id]
     );
 
