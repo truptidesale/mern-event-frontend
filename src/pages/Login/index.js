@@ -52,10 +52,10 @@ export default function Login({ history }) {
                     </FormGroup>
                 </div>
                 <FormGroup>
-                    <Button className="submit-btn">Submit</Button>
+                    <Button className="submit-btn">Login</Button>
                 </FormGroup>
                 <FormGroup>
-                    <Button className="secondary-btn" onClick={() => history.push("/register")}>New Account</Button>
+                    <Button className="secondary-btn" onClick={() => history.push("/register")}>Register</Button>
                 </FormGroup>
             </Form>
             {error ? (

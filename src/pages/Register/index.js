@@ -51,8 +51,8 @@ export default function Register({ history }) {
 
     return (
         <Container>
-            <h2>Register:</h2>
-            <p>Please <strong>Register</strong> for a new account</p>
+            <h4>Please <strong>Register</strong> for a new account</h4>
+            <p></p>
             <Form onSubmit={handleSubmit}>
                 <div className="input-group">
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">

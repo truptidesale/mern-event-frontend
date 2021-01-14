@@ -164,7 +164,7 @@ export default function Dashboard({ history }) {
             <div className="filter-panel">
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle color="primary" caret>
-                        Filter
+                        Select Category
                     </DropdownToggle>
                     <DropdownMenu>
                         <DropdownItem onClick={() => filterHandler(null)} active={rSelected === null} >All Sports</DropdownItem>
@@ -177,16 +177,16 @@ export default function Dashboard({ history }) {
             </div>
             <ul className="events-list">
                 {events.map(event => (
-                    < li key={event._id} >
+                    <li key={event._id}>
                         <header style={{ backgroundImage: `url(${event.thumbnail_url})` }}>
                             {event.user === user_id ? <div><Button color="danger" size="sm" onClick={() => deleteEventHandler(event._id)}>Delete</Button></div> : ""}
-
                         </header>
-                        <strong>{event.title}</strong>
-                        <span>Event Date: {moment(event.date).format('l')}</span>
-                        <span>Event Price: {parseFloat(event.price).toFixed(2)}</span>
-                        <span>Event Description: {event.description}</span>
-                        <Button color="primary" onClick={() => registrationRequestHandler(event)}>Registration Request</Button>
+                            <strong>{event.title}</strong>
+                            <span>Date: {moment(event.date).format('ll')}</span>
+                            <span>Price: {parseFloat(event.price).toFixed(2)}</span>
+                            <span>Description: {event.description}</span>
+                        
+                        <Button className="event-btn" color="primary" onClick={() => registrationRequestHandler(event)}>Registration Request</Button>
                     </li>
                 ))}
             </ul>

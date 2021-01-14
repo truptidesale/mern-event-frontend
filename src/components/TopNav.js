@@ -23,13 +23,13 @@ const TopNav = () => {
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <Link to="/events">Events</Link>
+                            <Link to="/">Home</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to="/">Dashboard</Link>
+                            <Link to="/events">Create Event</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to="/myregistrations">My Registrations</Link>
+                            <Link to="/myregistrations">Registration Requests</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
