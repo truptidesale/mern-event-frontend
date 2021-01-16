@@ -7,8 +7,7 @@ import './App.css';
 function App() {
   return (
     <ContextWrapper>
-      <Container>
-        <h1>Book My Event App</h1>
+      <Container fluid>
         <div className="content">
           <Routes />
         </div>

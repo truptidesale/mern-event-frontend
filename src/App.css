@@ -14,8 +14,8 @@ body,
 }
 
 body {
-  background: rgba(0, 0, 0, 0.5) url("./assets/background.jpg") no-repeat;
-  background-size: cover;
+  /* background: rgba(0, 0, 0, 0.5) url("./assets/background.jpg") no-repeat;
+  background-size: cover; */
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -45,7 +45,6 @@ button {
   width: 100%;
   opacity: 0.8;
   background: #ffffff;
-  margin-top: 50px;
   border-radius: 4px;
   padding: 30px;
 }

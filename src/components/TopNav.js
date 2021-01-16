@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../user-context'
+import { UserContext } from '../user-context';
+import logo from '../assets/logo.png';
 
 const TopNav = () => {
     const { isLoggedIn, setIsloggedIn } = useContext(UserContext);
@@ -19,6 +20,13 @@ const TopNav = () => {
         <div>
             <Navbar color="faded" light>
                 <NavbarToggler onClick={toggleNavbar} />
+                <Media>
+                    <img
+                        src={logo}
+                        className="img-fluid"
+                        alt="Book my event"
+                    />
+                </Media>
                 <Link to="/login" onClick={logoutHandler}>Logout</Link>
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>

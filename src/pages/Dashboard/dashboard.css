@@ -1,21 +1,22 @@
 ul.events-list {
-  width: 100%;
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
 ul.events-list li {
   display: flex;
   flex-direction: column;
+  padding: 16px;
+  width: 100%;
 }
 
 ul.events-list li header {
   width: 100%;
   height: 240px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
 }
@@ -27,9 +28,7 @@ ul.events-list li strong {
 }
 
 div.filter-panel {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  display: none;
 }
 
 ul.events-list header div {
@@ -47,12 +46,29 @@ ul.notifications li {
   line-height: 24px;
 }
 
-@media (max-width: 768px) {
-  ul.events-list {
-    grid-template-columns: 1fr;
+.event-btn {
+  margin-top: auto;
+}
+
+.event-categories {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  ul.events-list li {
+    width: 33.33%;
   }
 }
 
-.event-btn {
-  margin-top: 15px;
+@media (max-width: 548px) {
+  .event-categories {
+    display: none;
+  }
+
+  div.filter-panel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 }

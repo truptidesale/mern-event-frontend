@@ -175,18 +175,29 @@ export default function Dashboard({ history }) {
                     </DropdownMenu>
                 </Dropdown>
             </div>
+
+            <div className="event-categories">
+                <ButtonGroup>
+                    <Button  outline color="primary" onClick={() => filterHandler(null)} active={rSelected === null}>All Sports</Button>
+                    <Button outline color="primary" onClick={myEventsHandler} active={rSelected === 'myevents'}>My Events</Button>
+                    <Button outline color="primary" onClick={() => filterHandler("running")} active={rSelected === 'running'}>Running</Button>
+                    <Button outline color="primary" onClick={() => filterHandler("cycling")} active={rSelected === 'cycling'}>Cycling</Button>
+                    <Button outline color="primary" onClick={() => filterHandler('swimming')} active={rSelected === 'swimming'}>Swimming</Button>
+                </ButtonGroup>
+            </div>
             <ul className="events-list">
                 {events.map(event => (
                     <li key={event._id}>
                         <header style={{ backgroundImage: `url(${event.thumbnail_url})` }}>
                             {event.user === user_id ? <div><Button color="danger" size="sm" onClick={() => deleteEventHandler(event._id)}>Delete</Button></div> : ""}
                         </header>
+                        
                             <strong>{event.title}</strong>
                             <span>Date: {moment(event.date).format('ll')}</span>
                             <span>Price: {parseFloat(event.price).toFixed(2)}</span>
                             <span>Description: {event.description}</span>
                         
-                        <Button className="event-btn" color="primary" onClick={() => registrationRequestHandler(event)}>Registration Request</Button>
+                        <Button className="event-btn" color="primary" onClick={() => registrationRequestHandler(event)}>Register</Button>
                     </li>
                 ))}
             </ul>
