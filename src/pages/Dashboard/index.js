@@ -89,7 +89,7 @@ export default function Dashboard({ history }) {
         try {
             await api.post(`/registration/${event.id}`, {}, { headers: { user } })
             setSuccess(true)
-            setMessageHandler(`The request for the event ${event.title} was successfully!`)
+            setMessageHandler(`The registration request for the event ${event.title} sent successfully!`)
             setTimeout(() => {
                 setSuccess(false)
                 filterHandler(null)
@@ -98,7 +98,7 @@ export default function Dashboard({ history }) {
 
         } catch (error) {
             setError(true)
-            setMessageHandler(`The request for the event ${event.title} wasn't successfully!`)
+            setMessageHandler(`The request for the event ${event.title} wasn't successful!`)
             setTimeout(() => {
                 setError(false)
                 setMessageHandler('')
@@ -187,6 +187,18 @@ export default function Dashboard({ history }) {
                     <Button outline color="primary" onClick={() => filterHandler('charity')} active={rSelected === 'charity'}>Charity</Button>
                 </ButtonGroup>
             </div>
+
+            {
+                error ? (
+                    <Alert className="event-validation" color="danger"> {messageHandler} </Alert>
+                ) : ""
+            }
+            {
+                success ? (
+                    <Alert className="event-validation" color="success"> {messageHandler}</Alert>
+                ) : ""
+            }
+
             <ul className="events-list">
                 {events.map(event => (
                     <li key={event._id}>
@@ -203,16 +215,6 @@ export default function Dashboard({ history }) {
                     </li>
                 ))}
             </ul>
-            {
-                error ? (
-                    <Alert className="event-validation" color="danger"> {messageHandler} </Alert>
-                ) : ""
-            }
-            {
-                success ? (
-                    <Alert className="event-validation" color="success"> {messageHandler}</Alert>
-                ) : ""
-            }
         </>
     )
 }

@@ -49,12 +49,19 @@ export default function Login({ history }) {
                 />
             </Media>
             <Row>
-                <Col sm="12" md={{ size: 8, offset: 3 }}>
-                    Welcome to Book My Event App. Please <strong>"Login"</strong> into your account to view and register for the upcoming events in Saskatoon. You can create new events using <strong>"Create Event"</strong> option from menubar. Users will register for the event you have created and you will receive a notification to accept/reject in the <strong>"Registration Requests"</strong> section.
+                <Col sm="12" className="app-intro">
+                    <p>
+                        Welcome to Book My Event App. Please <strong>"Login"</strong> into your account to view and register for the upcoming events in Saskatoon. You can create new events using <strong>"Create Event"</strong> option from menubar. Users will register for the event you have created and you will receive a notification to accept/reject the <strong>Registration Request</strong>.
+                    </p>
+                    <p>
+                        Book My Event App a prototype of Event Management App is built using MERN stack (MongoDB, ExpressJS, ReactJS, and NodeJS)
+                    </p>
                 </Col>
                 
             </Row>
-            
+            {error ? (
+                <Alert className="event-validation" color="danger"> {errorMessage}</Alert>
+            ) : ""}
             <Form onSubmit={handleSubmit}>
                 <div className="input-group">
                     <FormGroup className="form-group-"></FormGroup>
@@ -72,9 +79,6 @@ export default function Login({ history }) {
                     <Button className="secondary-btn" onClick={() => history.push("/register")}>Register</Button>
                 </FormGroup>
             </Form>
-            {error ? (
-                <Alert className="event-validation" color="danger"> {errorMessage}</Alert>
-            ) : ""}
         </Container>
     );
 }
