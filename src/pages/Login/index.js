@@ -54,7 +54,7 @@ export default function Login({ history }) {
                         Welcome to <i>Book My Event</i> App. Please <strong>"Login"</strong> into your account to view and register for the upcoming events. You can create new events using <strong>"Create Event"</strong> option from menubar. Other registered users in the App can register for the event you have created; and you will receive a notification to accept/reject their <strong>Registration Requests</strong>.
                     </p>
                     <p>
-                        **<i>This is a prototype of Event Management App built using MERN stack (MongoDB, ExpressJS, ReactJS, and NodeJS) as a part of my portfolio. It has hosted on Heroku whereas the image files are hosted on AWS</i>.
+                        **<i>This is a prototype of Event Management App built using MERN stack (MongoDB, ExpressJS, ReactJS, and NodeJS) as a part of my portfolio. It has hosted on Heroku whereas the image files are hosted on AWS S3</i>.
                     </p>
                 </Col>
                 
