@@ -24,7 +24,7 @@ ul.events-list li header {
 ul.events-list li strong {
   margin-top: 12px;
   font-size: 24px;
-  color: #444;
+  color: #a5116f;
 }
 
 div.filter-panel {
@@ -55,9 +55,31 @@ ul.notifications li {
   text-align: center;
 }
 
+.eve-desc {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 625px) {
+  ul.events-list li {
+    width: 50%;
+  }
+}
+
 @media (min-width: 768px) {
   ul.events-list li {
     width: 33.33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  ul.events-list li {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1500px) {
+  ul.events-list li {
+    width: 20%;
   }
 }
 

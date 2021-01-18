@@ -167,22 +167,24 @@ export default function Dashboard({ history }) {
                         Select Category
                     </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem onClick={() => filterHandler(null)} active={rSelected === null} >All Sports</DropdownItem>
+                        <DropdownItem onClick={() => filterHandler(null)} active={rSelected === null} >All</DropdownItem>
                         <DropdownItem onClick={myEventsHandler} active={rSelected === 'myevents'} >My Events</DropdownItem>
-                        <DropdownItem onClick={() => filterHandler("running")} active={rSelected === 'running'} >Running</DropdownItem>
-                        <DropdownItem onClick={() => filterHandler("cycling")} active={rSelected === 'cycling'} >Cycling</DropdownItem>
-                        <DropdownItem color="primary" onClick={() => filterHandler('swimming')} active={rSelected === 'swimming'} >Swimming</DropdownItem>
+                        <DropdownItem onClick={() => filterHandler("tech")} active={rSelected === 'tech'} >Tech</DropdownItem>
+                        <DropdownItem onClick={() => filterHandler("social")} active={rSelected === 'social'} >Social</DropdownItem>
+                        <DropdownItem color="primary" onClick={() => filterHandler('entertainment')} active={rSelected === 'entertainment'} >Entertainment</DropdownItem>
+                        <DropdownItem color="primary" onClick={() => filterHandler('charity')} active={rSelected === 'charity'} >Charity</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </div>
 
             <div className="event-categories">
                 <ButtonGroup>
-                    <Button  outline color="primary" onClick={() => filterHandler(null)} active={rSelected === null}>All Sports</Button>
+                    <Button  outline color="primary" onClick={() => filterHandler(null)} active={rSelected === null}>All</Button>
                     <Button outline color="primary" onClick={myEventsHandler} active={rSelected === 'myevents'}>My Events</Button>
-                    <Button outline color="primary" onClick={() => filterHandler("running")} active={rSelected === 'running'}>Running</Button>
-                    <Button outline color="primary" onClick={() => filterHandler("cycling")} active={rSelected === 'cycling'}>Cycling</Button>
-                    <Button outline color="primary" onClick={() => filterHandler('swimming')} active={rSelected === 'swimming'}>Swimming</Button>
+                    <Button outline color="primary" onClick={() => filterHandler("tech")} active={rSelected === 'tech'}>Tech</Button>
+                    <Button outline color="primary" onClick={() => filterHandler("social")} active={rSelected === 'social'}>Social</Button>
+                    <Button outline color="primary" onClick={() => filterHandler('entertainment')} active={rSelected === 'entertainment'}>Entertainment</Button>
+                    <Button outline color="primary" onClick={() => filterHandler('charity')} active={rSelected === 'charity'}>Charity</Button>
                 </ButtonGroup>
             </div>
             <ul className="events-list">
@@ -195,7 +197,7 @@ export default function Dashboard({ history }) {
                             <strong>{event.title}</strong>
                             <span>Date: {moment(event.date).format('ll')}</span>
                             <span>Price: {parseFloat(event.price).toFixed(2)}</span>
-                            <span>Description: {event.description}</span>
+                            <span className="eve-desc">Description: {event.description}</span>
                         
                         <Button className="event-btn" color="primary" onClick={() => registrationRequestHandler(event)}>Register</Button>
                     </li>
