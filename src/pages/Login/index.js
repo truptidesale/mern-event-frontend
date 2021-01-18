@@ -51,10 +51,10 @@ export default function Login({ history }) {
             <Row>
                 <Col sm="12" className="app-intro">
                     <p>
-                        Welcome to Book My Event App. Please <strong>"Login"</strong> into your account to view and register for the upcoming events in Saskatoon. You can create new events using <strong>"Create Event"</strong> option from menubar. Users will register for the event you have created and you will receive a notification to accept/reject the <strong>Registration Request</strong>.
+                        Welcome to <i>Book My Event</i> App. Please <strong>"Login"</strong> into your account to view and register for the upcoming events. You can create new events using <strong>"Create Event"</strong> option from menubar. Other registered users in the App can register for the event you have created; and you will receive a notification to accept/reject their <strong>Registration Requests</strong>.
                     </p>
                     <p>
-                        Book My Event App a prototype of Event Management App is built using MERN stack (MongoDB, ExpressJS, ReactJS, and NodeJS)
+                        **<i>This is a prototype of Event Management App built using MERN stack (MongoDB, ExpressJS, ReactJS, and NodeJS) as a part of my portfolio. It has hosted on Heroku whereas the image files are hosted on AWS</i>.
                     </p>
                 </Col>
                 
